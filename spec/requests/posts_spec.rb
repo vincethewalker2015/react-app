@@ -38,6 +38,11 @@ RSpec.describe "/posts", type: :request do
       get posts_url, headers: valid_headers, as: :json
       expect(response).to be_successful
     end
+    
+    it "should display posta in descending order" do
+      get posts_url, as: :json
+      assert_equal Post.order(created_at: :desc), assigns(:posts)
+    end
   end
 
   describe "GET /show" do
