@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate, Link} from "react-router-dom"
+import { useParams, useNavigate, Link} from "react-router-dom";
 import { API_URL } from ".../../constants";
 
 function PostDetails() {
@@ -22,6 +22,9 @@ function PostDetails() {
     };
     fetchCurrentPost();
   }, [id]);
+
+  // if (!post) return null;
+  if (!post) return <h2>Loading...</h2>;
 
   return (
     <div>

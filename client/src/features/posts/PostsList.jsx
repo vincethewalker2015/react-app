@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { API_URL } from ".../../constants";
 
 function PostsList() {
-  //below imports the posts, useState nneeds to be added as an argument in import React..
+  //below imports the posts, useState needs to be added as an argument in import React..
   const [posts, setPosts] = useState([]);
   const [, setLoading] = useState(true);
   const [, setError] = useState(null);
