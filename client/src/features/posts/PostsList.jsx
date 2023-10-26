@@ -1,5 +1,6 @@
 // API_URL comes from the .env.development file, How we do that is in 'features/posts' create a new file called constants.js
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Added so You can link the post
 import { API_URL } from ".../../constants";
 
 function PostsList() {
@@ -30,14 +31,29 @@ function PostsList() {
 
   // return <>PostsList</>;
   return (
-    <div>
-      {posts.map((post) => (
-        <div key={post.id} className="post-container">
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
-        </div>
-      ))}
-    </div>
+   // <div>
+   //   {posts.map((post) => (
+   //     <div key={post.id} className="post-container">
+    //      <h2>{post.title}</h2>
+    //      <p>{post.body}</p>
+     //   </div>
+    //  ))}
+   // </div>
+
+   // We changed the above so you can add a Link..
+
+   <div>
+       {posts.map((post) => (
+           <div key={post.id} className="post-container">
+              <h2>
+                <Link to={`/posts/${post.id}`} className="post-title">
+                  {post.title}
+                </Link>
+              </h2>
+              <p>{post.body}</p>
+            </div>
+       ))}
+   </div>
   );
 }
 export default PostsList;
