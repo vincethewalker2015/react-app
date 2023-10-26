@@ -9,12 +9,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    # origins 'http://127.0.0.1:5173'
-    # THIS MEANS ANYONE CAN ACCESS THIS APP using option below
-    # To deploy you can use an example as:
-    # origins 'https://vincent.herokuapp.com'
     origins '*'
-
-    resource '*', headers: :any, methods: %(:get, :post, :put, :patch, :delete, :options, :head)
+    resource '*', headers: :any, methods: %i[get post patch put]
   end
 end
