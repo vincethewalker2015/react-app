@@ -32,6 +32,7 @@ function NewPostForm() {
             <form onSubmit={handleSubmit} >
               <div>
                 <label htmlFor="titleInput">Title:</label>
+                <br></br>
                 <input
                  id="titleInput"
                  type="text"
@@ -42,6 +43,7 @@ function NewPostForm() {
               </div>
               <div>
                 <label htmlFor="bodyInput">Body:</label>
+                <br />
                 <textarea
                     id="bodyInput"
                     value={body}
